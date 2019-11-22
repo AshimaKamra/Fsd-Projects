@@ -37,7 +37,6 @@ function load1()
 {
 
     var xmlhttp,x, txt = "";
-    var des="";
     var obj = { "table":"drinks", "limit":10 };
     var dbParam = JSON.stringify(obj);
     xmlhttp = new XMLHttpRequest();
@@ -47,16 +46,16 @@ function load1()
 {
   var myObj=JSON.parse(this.responseText);
        txt +="<div class=\"cocktails heading2\">"
-       des +="<div class=\"ingredients\">"
-        for(x in myObj.ingredients)
+     
+        for(x in myObj.drinks)
            {
                
-             txt += myObj.ingredients[x].strIngredient + "<br>";
-            // des += myObj.ingredients[x].strDescription + "<br>";
+             txt += myObj.drinks[x].strIngredient1 + "<br>";
+          
             }
             document.getElementById("demo3").innerHTML = txt;
-            document.getElementById("demo4").innerHTML = des;
-           des +="</div>"
+          
+      
             txt +="</div>";
 
         
